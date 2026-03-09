@@ -81,7 +81,7 @@ opacity:0.5;
 }
 }
 
-/* PHÁO HOA MỚI */
+/* PHÁO HOA */
 
 .firework-particle{
 position:absolute;
@@ -89,7 +89,7 @@ width:4px;
 height:4px;
 border-radius:50%;
 background:yellow;
-animation:explode 1s ease-out forwards;
+animation:explode 1.2s ease-out forwards;
 }
 
 @keyframes explode{
@@ -142,6 +142,10 @@ an toàn và có trách nhiệm là điều cần thiết.
 <script>
 const intro=document.getElementById("intro");
 
+/* âm thanh pháo */
+const boom=new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_c9a9b1a0a3.mp3?filename=firework-explosion-103613.mp3");
+
+/* hoa rơi */
 function petal(){
 const p=document.createElement("div");
 p.className="petal";
@@ -153,18 +157,25 @@ p.style.animationDuration=3+Math.random()*3+"s";
 intro.appendChild(p);
 setTimeout(()=>p.remove(),5000);
 }
+
+/* pháo hoa đẹp hơn */
 function firework(){
 
 let x=Math.random()*window.innerWidth;
 let y=Math.random()*window.innerHeight*0.6;
 
-for(let i=0;i<30;i++){
+let colors=["#ffea00","#ff2d55","#00e5ff","#7cff00","#ff7b00","#ffffff"];
+
+boom.currentTime=0;
+boom.play();
+
+for(let i=0;i<60;i++){
 
 const p=document.createElement("div");
 p.className="firework-particle";
 
 let angle=Math.random()*2*Math.PI;
-let distance=80+Math.random()*60;
+let distance=100+Math.random()*100;
 
 let dx=Math.cos(angle)*distance+"px";
 let dy=Math.sin(angle)*distance+"px";
@@ -172,15 +183,24 @@ let dy=Math.sin(angle)*distance+"px";
 p.style.left=x+"px";
 p.style.top=y+"px";
 
+p.style.background=colors[Math.floor(Math.random()*colors.length)];
+
 p.style.setProperty("--x",dx);
 p.style.setProperty("--y",dy);
 
 intro.appendChild(p);
 
-setTimeout(()=>p.remove(),1000);
+setTimeout(()=>p.remove(),1200);
 }
 
 }
+
+/* chạy intro 1 lần duy nhất */
+if(localStorage.getItem("introPlayed")){
+
+intro.style.display="none";
+
+}else{
 
 let petalInterval=setInterval(petal,200);
 let fireworkInterval=setInterval(firework,800);
@@ -189,7 +209,10 @@ setTimeout(()=>{
 clearInterval(petalInterval);
 clearInterval(fireworkInterval);
 intro.style.display="none";
+localStorage.setItem("introPlayed","true");
 },5000);
+
+}
 </script>
 
 </body>
