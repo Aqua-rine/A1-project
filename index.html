@@ -81,22 +81,24 @@ opacity:0.5;
 }
 }
 
-.firework{
+/* PHÁO HOA MỚI */
+
+.firework-particle{
 position:absolute;
-width:6px;
-height:6px;
-background:yellow;
+width:4px;
+height:4px;
 border-radius:50%;
+background:yellow;
 animation:explode 1s ease-out forwards;
 }
 
 @keyframes explode{
 0%{
-transform:scale(1);
+transform:translate(0,0);
 opacity:1;
 }
 100%{
-transform:scale(10);
+transform:translate(var(--x),var(--y));
 opacity:0;
 }
 }
@@ -151,16 +153,33 @@ p.style.animationDuration=3+Math.random()*3+"s";
 intro.appendChild(p);
 setTimeout(()=>p.remove(),5000);
 }
-
 function firework(){
-const f=document.createElement("div");
-f.className="firework";
 
-f.style.left=Math.random()*100+"vw";
-f.style.top=Math.random()*60+"vh";
+let x=Math.random()*window.innerWidth;
+let y=Math.random()*window.innerHeight*0.6;
 
-intro.appendChild(f);
-setTimeout(()=>f.remove(),1000);
+for(let i=0;i<30;i++){
+
+const p=document.createElement("div");
+p.className="firework-particle";
+
+let angle=Math.random()*2*Math.PI;
+let distance=80+Math.random()*60;
+
+let dx=Math.cos(angle)*distance+"px";
+let dy=Math.sin(angle)*distance+"px";
+
+p.style.left=x+"px";
+p.style.top=y+"px";
+
+p.style.setProperty("--x",dx);
+p.style.setProperty("--y",dy);
+
+intro.appendChild(p);
+
+setTimeout(()=>p.remove(),1000);
+}
+
 }
 
 let petalInterval=setInterval(petal,200);
@@ -174,6 +193,4 @@ intro.style.display="none";
 </script>
 
 </body>
-
 </html>
-
