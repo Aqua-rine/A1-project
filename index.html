@@ -6,6 +6,7 @@
 <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/2e/85/ce/2e85ce8175ae1cf3a86f7d120bbe7c0a.jpg">
 
 <style>
+
 body{
 margin:0;
 font-family:Arial;
@@ -51,6 +52,8 @@ padding:15px;
 margin-top:40px;
 }
 
+/* lớp phủ hiệu ứng */
+
 #fireworks{
 position:fixed;
 top:0;
@@ -61,31 +64,48 @@ pointer-events:none;
 z-index:9999;
 }
 
+
 .petal{
 position:absolute;
-color:pink;
-font-size:22px;
+font-size:28px;
+filter:drop-shadow(0 0 6px hotpink);
 animation:fall linear forwards;
 }
 
 @keyframes fall{
-0%{transform:translateY(-20px) rotate(0deg);opacity:1;}
-100%{transform:translateY(100vh) rotate(360deg);opacity:0.5;}
+0%{
+transform:translateY(-20px) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:translateY(100vh) rotate(360deg);
+opacity:0.5;
+}
 }
 
 
 .firework-particle{
 position:absolute;
-width:4px;
-height:4px;
+width:5px;
+height:5px;
 border-radius:50%;
-background:yellow;
+box-shadow:0 0 8px currentColor,0 0 15px currentColor;
 animation:explode 1.2s ease-out forwards;
 }
 
 @keyframes explode{
-0%{transform:translate(0,0);opacity:1;}
-100%{transform:translate(var(--x),var(--y));opacity:0;}
+
+0%{
+transform:translate(0,0);
+opacity:1;
+}
+
+100%{
+transform:translate(var(--x),var(--y));
+opacity:0;
+}
+
 }
 
 </style>
@@ -128,7 +148,11 @@ Vì vậy việc tuyên truyền sử dụng mạng xã hội một cách văn m
 
 const fireworks=document.getElementById("fireworks");
 
+
+
+const shoot=new Audio("https://cdn.pixabay.com/download/audio/2021/08/04/audio_12b0c7443c.mp3?filename=rocket-launch-6343.mp3");
 const boom=new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_c9a9b1a0a3.mp3?filename=firework-explosion-103613.mp3");
+
 
 
 function petal(){
@@ -142,19 +166,36 @@ p.style.animationDuration=3+Math.random()*3+"s";
 
 fireworks.appendChild(p);
 
-setTimeout(()=>p.remove(),5000);
+setTimeout(()=>{
+p.remove();
+},5000);
 
 }
+
+
 
 function firework(){
 
 let x=Math.random()*window.innerWidth;
 let y=Math.random()*window.innerHeight*0.6;
 
-let colors=["#ffea00","#ff2d55","#00e5ff","#7cff00","#ff7b00","#ffffff"];
+let colors=[
+"#ff004c",
+"#ffea00",
+"#00e5ff",
+"#7cff00",
+"#ff7b00",
+"#ff00ff",
+"#ffffff"
+];
 
+shoot.currentTime=0;
+shoot.play();
+
+setTimeout(()=>{
 boom.currentTime=0;
 boom.play();
+},300);
 
 for(let i=0;i<60;i++){
 
@@ -170,21 +211,27 @@ let dy=Math.sin(angle)*distance+"px";
 p.style.left=x+"px";
 p.style.top=y+"px";
 
-p.style.background=colors[Math.floor(Math.random()*colors.length)];
+let color=colors[Math.floor(Math.random()*colors.length)];
+p.style.background=color;
+p.style.color=color;
 
 p.style.setProperty("--x",dx);
 p.style.setProperty("--y",dy);
 
 fireworks.appendChild(p);
 
-setTimeout(()=>p.remove(),1200);
+setTimeout(()=>{
+p.remove();
+},1200);
 
 }
 
 }
+
+
 
 let petalInterval=setInterval(petal,200);
-let fireworkInterval=setInterval(firework,800);
+let fireworkInterval=setInterval(firework,900);
 
 setTimeout(()=>{
 clearInterval(petalInterval);
