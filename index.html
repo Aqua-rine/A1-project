@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Trang tuyên truyền của chi đoàn 11A1</title>
-<link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/2e/85/ce/2e85ce8175ae1cf3a86f7d120bbe7c0a.jpg">
+
+<link rel="icon" type="image/jpeg"
+href="https://i.pinimg.com/736x/2e/85/ce/2e85ce8175ae1cf3a86f7d120bbe7c0a.jpg">
 
 <style>
 
@@ -139,8 +141,11 @@ Tuy nhiên việc sử dụng thiếu kiểm soát có thể dẫn đến nhiề
 </p>
 
 <p>
-Vì vậy việc tuyên truyền sử dụng mạng xã hội một cách văn minh, an toàn và có trách nhiệm là điều cần thiết.
+Vì vậy việc tuyên truyền sử dụng mạng xã hội một cách văn minh,
+an toàn và có trách nhiệm là điều cần thiết.
 </p>
+
+<p><b>Click vào trang để xem pháo hoa 🎆</b></p>
 
 </div>
 
@@ -152,19 +157,20 @@ Vì vậy việc tuyên truyền sử dụng mạng xã hội một cách văn m
 
 const fireworks=document.getElementById("fireworks");
 
-/* âm thanh pháo hoa thật */
+/* âm thanh */
 
 const shoot=new Audio("https://cdn.pixabay.com/download/audio/2023/03/21/audio_6d5c9c3c5e.mp3?filename=firework-launch-144835.mp3");
 const boom=new Audio("https://cdn.pixabay.com/download/audio/2022/11/03/audio_4c9b8f1d7c.mp3?filename=large-firework-explosion-115998.mp3");
 
-shoot.volume=1.0;
-boom.volume=1.0;
+shoot.volume=1;
+boom.volume=1;
 
 /* hoa rơi */
 
 function petal(){
 
 const p=document.createElement("div");
+
 p.className="petal";
 p.innerHTML="🌸";
 
@@ -199,8 +205,6 @@ let colors=[
 shoot.currentTime=0;
 shoot.play();
 
-/* delay giống pháo thật */
-
 setTimeout(()=>{
 
 boom.currentTime=0;
@@ -217,6 +221,7 @@ boom.cloneNode().play();
 for(let i=0;i<60;i++){
 
 const p=document.createElement("div");
+
 p.className="firework-particle";
 
 let angle=Math.random()*2*Math.PI;
@@ -246,7 +251,15 @@ p.remove();
 
 }
 
-/* chạy hiệu ứng */
+/* click để bắt đầu hiệu ứng */
+
+let started=false;
+
+document.addEventListener("click",()=>{
+
+if(started) return;
+
+started=true;
 
 let petalInterval=setInterval(petal,200);
 let fireworkInterval=setInterval(firework,1200);
@@ -255,6 +268,8 @@ setTimeout(()=>{
 clearInterval(petalInterval);
 clearInterval(fireworkInterval);
 },6000);
+
+});
 
 </script>
 
