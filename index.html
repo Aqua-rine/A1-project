@@ -52,7 +52,7 @@ padding:15px;
 margin-top:40px;
 }
 
-/* lớp phủ hiệu ứng */
+/* lớp hiệu ứng */
 
 #fireworks{
 position:fixed;
@@ -64,6 +64,7 @@ pointer-events:none;
 z-index:9999;
 }
 
+/* hoa rơi */
 
 .petal{
 position:absolute;
@@ -73,6 +74,7 @@ animation:fall linear forwards;
 }
 
 @keyframes fall{
+
 0%{
 transform:translateY(-20px) rotate(0deg);
 opacity:1;
@@ -82,15 +84,17 @@ opacity:1;
 transform:translateY(100vh) rotate(360deg);
 opacity:0.5;
 }
+
 }
 
+/* pháo hoa */
 
 .firework-particle{
 position:absolute;
 width:5px;
 height:5px;
 border-radius:50%;
-box-shadow:0 0 8px currentColor,0 0 15px currentColor;
+box-shadow:0 0 10px currentColor,0 0 18px currentColor;
 animation:explode 1.2s ease-out forwards;
 }
 
@@ -148,12 +152,15 @@ Vì vậy việc tuyên truyền sử dụng mạng xã hội một cách văn m
 
 const fireworks=document.getElementById("fireworks");
 
+/* âm thanh pháo hoa thật */
 
+const shoot=new Audio("https://cdn.pixabay.com/download/audio/2023/03/21/audio_6d5c9c3c5e.mp3?filename=firework-launch-144835.mp3");
+const boom=new Audio("https://cdn.pixabay.com/download/audio/2022/11/03/audio_4c9b8f1d7c.mp3?filename=large-firework-explosion-115998.mp3");
 
-const shoot=new Audio("https://cdn.pixabay.com/download/audio/2021/08/04/audio_12b0c7443c.mp3?filename=rocket-launch-6343.mp3");
-const boom=new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_c9a9b1a0a3.mp3?filename=firework-explosion-103613.mp3");
+shoot.volume=1.0;
+boom.volume=1.0;
 
-
+/* hoa rơi */
 
 function petal(){
 
@@ -172,7 +179,7 @@ p.remove();
 
 }
 
-
+/* pháo hoa */
 
 function firework(){
 
@@ -192,10 +199,20 @@ let colors=[
 shoot.currentTime=0;
 shoot.play();
 
+/* delay giống pháo thật */
+
 setTimeout(()=>{
+
 boom.currentTime=0;
 boom.play();
-},300);
+
+/* nổ lớn hơn */
+
+setTimeout(()=>{
+boom.cloneNode().play();
+},80);
+
+},500);
 
 for(let i=0;i<60;i++){
 
@@ -203,7 +220,7 @@ const p=document.createElement("div");
 p.className="firework-particle";
 
 let angle=Math.random()*2*Math.PI;
-let distance=100+Math.random()*100;
+let distance=100+Math.random()*120;
 
 let dx=Math.cos(angle)*distance+"px";
 let dy=Math.sin(angle)*distance+"px";
@@ -212,6 +229,7 @@ p.style.left=x+"px";
 p.style.top=y+"px";
 
 let color=colors[Math.floor(Math.random()*colors.length)];
+
 p.style.background=color;
 p.style.color=color;
 
@@ -228,15 +246,15 @@ p.remove();
 
 }
 
-
+/* chạy hiệu ứng */
 
 let petalInterval=setInterval(petal,200);
-let fireworkInterval=setInterval(firework,900);
+let fireworkInterval=setInterval(firework,1200);
 
 setTimeout(()=>{
 clearInterval(petalInterval);
 clearInterval(fireworkInterval);
-},5000);
+},6000);
 
 </script>
 
