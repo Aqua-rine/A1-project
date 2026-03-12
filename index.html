@@ -1,8 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<title>Mạng xã hội và học sinh</title>
+
+<link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/8d/fe/2b/8dfe2b977112fab825be49e4ff15f100.jpg">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f8;
+line-height:1.7;
+color:#222;
+}
+
+/* HEADER */
+
+.header{
+height:420px;
+background:url("https://images.unsplash.com/photo-1519389950473-47ba0277781c") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.header::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7));
+}
+
+.header h1{
+position:relative;
+color:white;
+font-size:42px;
+max-width:900px;
+text-align:center;
+z-index:2;
+}
+
+/* LAYOUT */
+
+.container{
+max-width:1200px;
+margin:auto;
+display:flex;
+gap:40px;
+padding:40px 20px;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:260px;
+background:white;
+padding:25px;
+border-radius:10px;
+height:fit-content;
+position:sticky;
+top:30px;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h3{
+margin-top:0;
+}
+
+.sidebar ol{
+padding-left:18px;
+}
+
+.sidebar li{
+margin:12px 0;
+}
+
+.sidebar a{
+text-decoration:none;
+color:#333;
+font-size:15px;
+}
+
+.sidebar a:hover{
+color:#e63946;
+}
+
+/* CONTENT */
+
+.content{
+flex:1;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+.content h2{
+margin-top:40px;
+font-size:28px;
+}
+
+.content p{
+margin:18px 0;
+font-size:17px;
+}
+
+/* IMAGE */
+
+.article-img{
+width:100%;
+border-radius:8px;
+margin:25px 0;
+}
+
+.caption{
+font-size:14px;
+color:#666;
+margin-top:-10px;
+margin-bottom:20px;
+}
+
+/* QUOTE */
+
+blockquote{
+border-left:5px solid #e63946;
+padding-left:18px;
+font-style:italic;
+color:#555;
+margin:30px 0;
+font-size:18px;
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:60px;
+text-align:center;
+padding:25px;
+font-size:14px;
+color:#777;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="header">
+<h1>Mạng xã hội và học sinh: Công cụ kết nối hay “hố đen” thời gian?</h1>
+</div>
+
+
+<div class="container">
+
+
+<div class="sidebar">
+
+<h3>Mục lục</h3>
+
+<ol>
+<li><a href="#thuctrang">Thực trạng: Khi “cuộc sống số” chiếm lĩnh học đường</a></li>
+<li><a href="#diemsang">Những điểm sáng không thể phủ nhận</a></li>
+<li><a href="#nguyco">Những “hố đen” trực chờ</a></li>
+<li><a href="#giaiphap">Giải pháp: Chiến thuật 3K</a></li>
+</ol>
+
+</div>
+
+
 <div class="content">
+
 
 <h2 id="thuctrang">1. Thực trạng: Khi "Cuộc sống số" chiếm lĩnh học đường</h2>
 
 <img class="article-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+<div class="caption">Học sinh ngày nay dành nhiều thời gian cho mạng xã hội.</div>
 
 <p>
 Để có cái nhìn thực tế hơn về thói quen sử dụng mạng xã hội của học sinh trung học, nhóm chúng tôi đã tiến hành một khảo sát nhỏ với học sinh cấp 3 xoay quanh thời gian sử dụng điện thoại, mục đích truy cập mạng xã hội và những ảnh hưởng của nó đến việc học tập.
@@ -13,15 +194,11 @@ Bảng khảo sát gồm 5 câu hỏi ngắn, tập trung vào thói quen sử d
 </p>
 
 <p>
-Theo khảo sát do nhóm thực hiện với 150 học sinh trong trường, trước hết mạng xã hội đang chiếm dụng một lượng thời gian rất lớn trong ngày. Có tới 48% học sinh cho biết sử dụng mạng xã hội trên 5 giờ mỗi ngày. Nếu tính thêm 22% học sinh sử dụng từ 3–5 giờ, thì tổng cộng 70% người tham gia khảo sát dành phần lớn thời gian trong ngày cho các nền tảng trực tuyến. Điều này cho thấy mức độ gắn bó, thậm chí phụ thuộc của học sinh vào không gian mạng đang ngày càng gia tăng.
+Theo khảo sát do nhóm thực hiện với 150 học sinh trong trường, trước hết mạng xã hội đang chiếm dụng một lượng thời gian rất lớn trong ngày. Có tới 48% học sinh cho biết sử dụng mạng xã hội trên 5 giờ mỗi ngày. Nếu tính thêm 22% học sinh sử dụng từ 3–5 giờ, thì tổng cộng 70% người tham gia khảo sát dành phần lớn thời gian trong ngày cho các nền tảng trực tuyến.
 </p>
 
 <p>
-Bên cạnh đó, mục đích sử dụng mạng xã hội chủ yếu vẫn thiên về giải trí. Kết quả khảo sát cho thấy 46,7% học sinh sử dụng mạng xã hội để xem video và giải trí, trong khi chỉ 21,3% sử dụng để tìm kiếm thông tin hoặc phục vụ việc học tập. Điều này phản ánh thực tế rằng dù mạng xã hội có tiềm năng trở thành công cụ hỗ trợ học tập hiệu quả, nhưng trong đời sống hằng ngày, nó vẫn chủ yếu được xem như một phương tiện giải trí.
-</p>
-
-<p>
-Từ những số liệu trên có thể thấy rằng mạng xã hội không còn chỉ là một công cụ giải trí đơn thuần, mà đang dần trở thành một “không gian sống thứ hai” của học sinh, nơi các em dành nhiều thời gian để giao tiếp, giải trí và tiếp nhận thông tin mỗi ngày.
+Điều này cho thấy mức độ gắn bó, thậm chí phụ thuộc của học sinh vào không gian mạng đang ngày càng gia tăng.
 </p>
 
 <img class="article-img" src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
@@ -35,7 +212,7 @@ Mạng xã hội giúp học sinh kết nối với nhiều người hơn bao gi
 </p>
 
 
-<h2 id="diemsang">2. Những "điểm sáng" không thể phủ nhận</h2>
+<h2 id="diemsang">2. Những điểm sáng không thể phủ nhận</h2>
 
 <img class="article-img" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
 
@@ -44,102 +221,63 @@ Nếu biết cách tận dụng, mạng xã hội không chỉ là nơi giải t
 </p>
 
 <p>
-Học tập không biên giới: Các kênh “studygram”, video học tập hay chia sẻ kiến thức trên TikTok và YouTube giúp việc tiếp thu kiến thức trở nên trực quan, ngắn gọn và hấp dẫn hơn, biến việc học thành một trải nghiệm thú vị thay vì áp lực.
+Các kênh học tập trên YouTube, TikTok hay Instagram đang giúp nhiều học sinh tiếp cận kiến thức theo cách trực quan và sinh động hơn.
 </p>
 
 <p>
-Xây dựng thương hiệu cá nhân từ sớm: Nhiều bạn trẻ tận dụng mạng xã hội để thể hiện năng lực viết lách, thiết kế, sáng tạo nội dung hay chỉnh sửa video. Đây không chỉ là sở thích cá nhân mà còn là bước đệm giúp rèn luyện kỹ năng và định hình thương hiệu cá nhân trong thời đại số.
-</p>
-
-<p>
-Mạng xã hội đã thu hẹp khoảng cách địa lý, tạo ra một môi trường kết nối rộng lớn chưa từng có.
-</p>
-
-<p>
-Kết nối toàn cầu: Thông qua các nền tảng như Facebook hay Instagram, con người có thể dễ dàng giao lưu, học hỏi và trao đổi với bạn bè ở khắp nơi trên thế giới.
-</p>
-
-<p>
-Mở rộng cơ hội phát triển: Nhiều cộng đồng học tập, nghề nghiệp hay sáng tạo nội dung được hình thành trên mạng xã hội, giúp người trẻ tiếp cận thông tin, cơ hội học tập và việc làm nhanh chóng hơn.
-</p>
-
-<p>
-Không chỉ là nơi chia sẻ thông tin, mạng xã hội còn là công cụ mạnh mẽ giúp lan tỏa những giá trị tốt đẹp trong xã hội.
-</p>
-
-<p>
-Truyền cảm hứng sống tích cực: Những câu chuyện vượt khó, hành trình học tập hay kinh nghiệm phát triển bản thân được lan truyền rộng rãi, tạo động lực cho nhiều người.
-</p>
-
-<p>
-Kêu gọi và kết nối cộng đồng: Các chiến dịch thiện nguyện, bảo vệ môi trường hay hỗ trợ người gặp khó khăn có thể được lan tỏa nhanh chóng nhờ sức mạnh chia sẻ của cộng đồng mạng.
+Ngoài ra, mạng xã hội còn giúp người trẻ xây dựng thương hiệu cá nhân, chia sẻ khả năng sáng tạo và mở rộng cơ hội học tập cũng như nghề nghiệp trong tương lai.
 </p>
 
 
-<h2 id="nguyco">3. Những "hố đen" trực chờ</h2>
+<h2 id="nguyco">3. Những “hố đen” trực chờ</h2>
 
 <img class="article-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
 
 <p>
-Nếu ví mạng xã hội là một "con dao hai lưỡi", thì độ sắc bén của nó không nằm ở những tính năng ưu việt, mà nằm ở những hệ lụy tâm lý âm thầm nhưng tàn khốc.
+Nếu ví mạng xã hội là một con dao hai lưỡi, thì mặt còn lại của nó chính là những hệ lụy tâm lý và thói quen sử dụng không kiểm soát.
 </p>
 
 <p>
-Mạng xã hội – tưởng chừng chỉ là nơi kết nối và chia sẻ – đôi khi lại giống như một “hố đen thời gian” âm thầm cuốn người dùng vào vòng xoáy vô tận của thông tin, hình ảnh và cảm xúc.
+Nhiều học sinh dễ dàng bị cuốn vào vòng xoáy thông tin vô tận, khiến việc học tập bị gián đoạn và khả năng tập trung giảm sút.
 </p>
 
 <p>
-Chỉ vài phút lướt bảng tin có thể kéo dài thành hàng giờ mà chúng ta không hề nhận ra. Việc tiếp xúc liên tục với những nội dung tiêu cực, tin giả hay những hình ảnh “cuộc sống hoàn hảo” được tô vẽ trên mạng cũng dễ khiến người trẻ rơi vào cảm giác so sánh, áp lực và mất tự tin.
+Không chỉ vậy, những hình ảnh “cuộc sống hoàn hảo” trên mạng cũng có thể khiến người trẻ so sánh bản thân và cảm thấy áp lực.
+</p>
+
+
+<h2 id="giaiphap">4. Giải pháp: Chiến thuật 3K</h2>
+
+<p>
+Để mạng xã hội trở thành công cụ hữu ích thay vì “hố đen thời gian”, học sinh cần áp dụng chiến thuật 3K: Kiểm soát – Kỹ năng – Khởi tạo.
 </p>
 
 <p>
-Không chỉ vậy, mạng xã hội còn có thể làm giảm khả năng tập trung, ảnh hưởng đến việc học tập, giấc ngủ và các mối quan hệ ngoài đời thực.
+Kiểm soát: quản lý thời gian sử dụng mạng xã hội mỗi ngày.
 </p>
 
 <p>
-Bên cạnh đó, mạng xã hội còn có thể tạo ra một môi trường nơi thông tin sai lệch lan truyền với tốc độ chóng mặt.
+Kỹ năng: rèn luyện tư duy phản biện để nhận biết thông tin sai lệch.
 </p>
 
 <p>
-Đối với học sinh, việc dành quá nhiều thời gian cho mạng xã hội còn làm giảm thời gian đọc sách, học tập và tham gia các hoạt động ngoài đời thực.
+Khởi tạo: sử dụng mạng xã hội để chia sẻ kiến thức và phát triển bản thân.
 </p>
-
-<p>
-Khi mạng xã hội chiếm quá nhiều thời gian và sự quan tâm, những hoạt động ý nghĩa như đọc sách, trò chuyện với gia đình hay tham gia các hoạt động cộng đồng cũng dần bị thu hẹp.
-</p>
-
-
-<h2 id="giaiphap">4. Giải pháp: Chiến thuật "3K"</h2>
-
-<p>
-Để mạng xã hội không còn là "hố đen" tiêu tốn thời gian mà trở thành bệ phóng cho tương lai, học sinh cần một tư duy cầm lái chủ động thông qua chiến thuật "3K": Kiểm soát – Kỹ năng – Khởi tạo.
-</p>
-
-<p>
-Trước hết, bước đi tiên quyết chính là khả năng kiểm soát. Thay vì để những vòng xoáy "scroll" chiếm lấy hàng giờ mỗi ngày, chúng ta cần chủ động quản lý quỹ thời gian của mình.
-</p>
-
-<p>
-Những công cụ như ứng dụng Forest hay tính năng Screen Time có thể giúp theo dõi thời gian sử dụng điện thoại và tạo thói quen sử dụng mạng xã hội có kỷ luật hơn.
-</p>
-
-<p>
-Tiếp theo là kỹ năng tư duy phản biện. Trước mỗi thông tin trên mạng, học sinh cần đặt câu hỏi về nguồn tin, mục đích của người đăng và độ chính xác của nội dung.
-</p>
-
-<p>
-Cuối cùng là sự khởi tạo. Thay vì chỉ tiêu thụ nội dung, học sinh có thể sử dụng mạng xã hội để chia sẻ kiến thức, phát triển kỹ năng và xây dựng hình ảnh cá nhân tích cực.
-</p>
-
-
-<h2>Thông điệp cuối</h2>
 
 <blockquote>
-Mạng xã hội không xấu, nhưng cách chúng ta sử dụng nó có thể quyết định tác động của nó đến cuộc sống.
+Mạng xã hội không xấu, nhưng cách chúng ta sử dụng nó sẽ quyết định tác động của nó đến cuộc sống.
 </blockquote>
 
-<p>
-Hãy là người làm chủ công nghệ, biết chọn lọc thông tin, kiểm soát thời gian và sử dụng mạng xã hội một cách thông minh. Khi đó, mạng xã hội sẽ trở thành công cụ hỗ trợ học tập và kết nối, thay vì là “hố đen” cuốn đi thời gian và năng lượng của chúng ta.
-</p>
+</div>
+
 
 </div>
+
+
+<div class="footer">
+Trang thông tin tuyên truyền – Chi đoàn 11A1
+</div>
+
+
+</body>
+</html>
