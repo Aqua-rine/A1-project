@@ -1,283 +1,311 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
 <meta charset="UTF-8">
-<title>Mạng xã hội và học sinh</title>
-
+<title>Trang tuyên truyền của chi đoàn 11A1</title>
 <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/8d/fe/2b/8dfe2b977112fab825be49e4ff15f100.jpg">
 
 <style>
-
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#f4f6f8;
-line-height:1.7;
-color:#222;
+background:#fafafa;
+scroll-behavior:smooth;
 }
 
-/* HEADER */
-
 .header{
-height:420px;
-background:url("https://images.unsplash.com/photo-1519389950473-47ba0277781c") center/cover no-repeat;
+background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+url("https://i.pinimg.com/736x/95/3e/5f/953e5fb578bd7ecc9eef0c86ec972f05.jpg");
+background-position:center;
+background-size:200%;
+background-repeat:no-repeat;
+height:360px;
 display:flex;
 align-items:center;
 justify-content:center;
-position:relative;
-}
-
-.header::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7));
-}
-
-.header h1{
-position:relative;
+gap:20px;
 color:white;
-font-size:42px;
-max-width:900px;
-text-align:center;
-z-index:2;
+font-size:34px;
+font-weight:bold;
+text-shadow:2px 2px 6px black;
 }
 
-/* LAYOUT */
+.logo{
+width:80px;
+height:80px;
+border-radius:50%;
+border:3px solid white;
+object-fit:cover;
+}
+
+.navbar{
+background:#c40000;
+display:flex;
+justify-content:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.navbar a{
+color:white;
+padding:14px 22px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.navbar a:hover{
+background:#a00000;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:70px 60px;
+background:#f7f7f7;
+}
+
+.hero-text{
+width:45%;
+}
+
+.hero-text p{
+font-size:18px;
+color:#444;
+}
+
+.hero-image{
+position:relative;
+width:50%;
+height:420px;
+overflow:hidden;
+}
+
+.red-bg{
+position:absolute;
+right:0;
+top:0;
+width:75%;
+height:100%;
+background:#c40000;
+}
+
+.image-card{
+position:absolute;
+top:50%;
+right:60px;
+transform:translateY(-50%);
+background:#ffeaea;
+padding:25px;
+border-radius:20px;
+}
+
+.image-card img{
+width:100%;
+max-width:420px;
+border-radius:18px;
+display:block;
+}
 
 .container{
+display:flex;
+padding:40px;
+gap:40px;
 max-width:1200px;
 margin:auto;
-display:flex;
-gap:40px;
-padding:40px 20px;
 }
 
-/* SIDEBAR */
-
 .sidebar{
-width:260px;
+width:25%;
 background:white;
-padding:25px;
+padding:20px;
 border-radius:10px;
-height:fit-content;
-position:sticky;
-top:30px;
-box-shadow:0 3px 10px rgba(0,0,0,0.05);
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
 }
 
 .sidebar h3{
 margin-top:0;
+color:#c40000;
 }
 
 .sidebar ol{
 padding-left:18px;
-}
-
-.sidebar li{
-margin:12px 0;
+line-height:2;
 }
 
 .sidebar a{
 text-decoration:none;
 color:#333;
-font-size:15px;
 }
 
 .sidebar a:hover{
-color:#e63946;
+color:#c40000;
 }
 
-/* CONTENT */
-
 .content{
-flex:1;
+width:75%;
 background:white;
-padding:40px;
+padding:30px;
 border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,0.05);
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+line-height:1.8;
 }
 
 .content h2{
+color:#c40000;
 margin-top:40px;
-font-size:28px;
 }
-
-.content p{
-margin:18px 0;
-font-size:17px;
-}
-
-/* IMAGE */
-
-.article-img{
-width:100%;
-border-radius:8px;
-margin:25px 0;
-}
-
-.caption{
-font-size:14px;
-color:#666;
-margin-top:-10px;
-margin-bottom:20px;
-}
-
-/* QUOTE */
 
 blockquote{
-border-left:5px solid #e63946;
-padding-left:18px;
+background:#fff3f3;
+padding:15px;
+border-left:6px solid #c40000;
+margin:20px 0;
 font-style:italic;
-color:#555;
-margin:30px 0;
-font-size:18px;
 }
 
-/* FOOTER */
-
-.footer{
-margin-top:60px;
+footer{
 text-align:center;
 padding:25px;
-font-size:14px;
-color:#777;
+margin-top:40px;
+background:#333;
+color:white;
 }
 
+#fireworks{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:9999;
+}
+
+.petal{
+position:absolute;
+font-size:28px;
+filter:drop-shadow(0 0 6px hotpink);
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(-20px) rotate(0deg);opacity:1;}
+100%{transform:translateY(100vh) rotate(360deg);opacity:0.5;}
+}
+
+.firework-particle{
+position:absolute;
+width:5px;
+height:5px;
+border-radius:50%;
+box-shadow:0 0 8px currentColor,0 0 15px currentColor;
+animation:explode 1.2s ease-out forwards;
+}
+
+@keyframes explode{
+0%{transform:translate(0,0);opacity:1;}
+100%{transform:translate(var(--x),var(--y));opacity:0;}
+}
 </style>
 </head>
 
-
 <body>
 
+<div id="fireworks"></div>
 
 <div class="header">
-<h1>Mạng xã hội và học sinh: Công cụ kết nối hay “hố đen” thời gian?</h1>
+<img class="logo" src="https://i.pinimg.com/736x/8d/fe/2b/8dfe2b977112fab825be49e4ff15f100.jpg">
+MẠNG XÃ HỘI: CÔNG CỤ HAY CẠM BẪY ?
 </div>
 
+<div class="navbar">
+<a href="index.html">Trang chủ</a>
+<a href="gioithieu.html">Giới thiệu</a>
+<a href="lienket.html">Liên kết hữu ích</a>
+<a href="lienhe.html">Liên hệ</a>
+</div>
+
+<section class="hero">
+<div class="hero-text">
+<p>
+Mạng xã hội giúp kết nối, học tập và chia sẻ thông tin nhanh chóng.
+Tuy nhiên nếu sử dụng không đúng cách, nó cũng có thể gây ra nhiều
+ảnh hưởng tiêu cực đến việc học tập và cuộc sống.
+</p>
+</div>
+
+<div class="hero-image">
+<div class="red-bg"></div>
+<div class="image-card">
+<img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7">
+</div>
+</div>
+</section>
 
 <div class="container">
 
-
 <div class="sidebar">
-
 <h3>Mục lục</h3>
-
 <ol>
-<li><a href="#thuctrang">Thực trạng: Khi “cuộc sống số” chiếm lĩnh học đường</a></li>
-<li><a href="#diemsang">Những điểm sáng không thể phủ nhận</a></li>
-<li><a href="#nguyco">Những “hố đen” trực chờ</a></li>
-<li><a href="#giaiphap">Giải pháp: Chiến thuật 3K</a></li>
+<li><a href="#thuctrang">Thực trạng</a></li>
+<li><a href="#diemsang">Những "điểm sáng"</a></li>
+<li><a href="#hoden">Những "hố đen"</a></li>
+<li><a href="#giaiphap">Giải pháp</a></li>
 </ol>
-
 </div>
-
 
 <div class="content">
 
-
 <h2 id="thuctrang">1. Thực trạng: Khi "Cuộc sống số" chiếm lĩnh học đường</h2>
 
-<img class="article-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
-<div class="caption">Học sinh ngày nay dành nhiều thời gian cho mạng xã hội.</div>
+<p>Để có cái nhìn thực tế hơn về thói quen sử dụng mạng xã hội của học sinh trung học, nhóm chúng tôi đã tiến hành một khảo sát nhỏ với học sinh cấp 3 xoay quanh thời gian sử dụng điện thoại, mục đích truy cập mạng xã hội và những ảnh hưởng của nó đến việc học tập.</p>
 
-<p>
-Để có cái nhìn thực tế hơn về thói quen sử dụng mạng xã hội của học sinh trung học, nhóm chúng tôi đã tiến hành một khảo sát nhỏ với học sinh cấp 3 xoay quanh thời gian sử dụng điện thoại, mục đích truy cập mạng xã hội và những ảnh hưởng của nó đến việc học tập.
-</p>
+<p>Bảng khảo sát gồm 5 câu hỏi ngắn, tập trung vào thói quen sử dụng mạng xã hội trong ngày, thời điểm truy cập nhiều nhất cũng như nhận thức của học sinh về tác động của mạng xã hội đối với bản thân.</p>
 
-<p>
-Bảng khảo sát gồm 5 câu hỏi ngắn, tập trung vào thói quen sử dụng mạng xã hội trong ngày, thời điểm truy cập nhiều nhất cũng như nhận thức của học sinh về tác động của mạng xã hội đối với bản thân. Thông qua khảo sát này, chúng tôi mong muốn hiểu rõ hơn cách mà mạng xã hội đang hiện diện trong cuộc sống của học sinh hiện nay.
-</p>
+<p>Thông qua khảo sát này, chúng tôi mong muốn hiểu rõ hơn cách mà mạng xã hội đang hiện diện trong cuộc sống của học sinh hiện nay.</p>
 
-<p>
-Theo khảo sát do nhóm thực hiện với 150 học sinh trong trường, trước hết mạng xã hội đang chiếm dụng một lượng thời gian rất lớn trong ngày. Có tới 48% học sinh cho biết sử dụng mạng xã hội trên 5 giờ mỗi ngày. Nếu tính thêm 22% học sinh sử dụng từ 3–5 giờ, thì tổng cộng 70% người tham gia khảo sát dành phần lớn thời gian trong ngày cho các nền tảng trực tuyến.
-</p>
-
-<p>
-Điều này cho thấy mức độ gắn bó, thậm chí phụ thuộc của học sinh vào không gian mạng đang ngày càng gia tăng.
-</p>
-
-<img class="article-img" src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+<p>Theo khảo sát do nhóm thực hiện với 150 học sinh trong trường, Trước hết, mạng xã hội đang chiếm dụng một lượng thời gian rất lớn trong ngày...</p>
 
 <blockquote>
 “Ban đầu mình chỉ định xem TikTok vài phút thôi, nhưng sau đó cứ lướt hết video này đến video khác. Nhiều khi nhìn lại thì đã trôi qua gần một tiếng.”
 </blockquote>
 
-<p>
-Mạng xã hội giúp học sinh kết nối với nhiều người hơn bao giờ hết. Nhưng nghịch lý là, càng kết nối nhiều, đôi khi chúng ta lại càng cảm thấy cô đơn hơn khi dành quá nhiều thời gian cho thế giới ảo.
-</p>
+<h2 id="diemsang">2. Những "điểm sáng" không thể phủ nhận</h2>
 
+<p>Nếu biết cách tận dụng, mạng xã hội không chỉ là nơi giải trí mà còn là kho tri thức khổng lồ giúp người trẻ tiếp cận kiến thức nhanh chóng và đa dạng.</p>
 
-<h2 id="diemsang">2. Những điểm sáng không thể phủ nhận</h2>
+<p>Học tập không biên giới...</p>
 
-<img class="article-img" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+<h2 id="hoden">3. Những "hố đen" trực chờ</h2>
 
-<p>
-Nếu biết cách tận dụng, mạng xã hội không chỉ là nơi giải trí mà còn là kho tri thức khổng lồ giúp người trẻ tiếp cận kiến thức nhanh chóng và đa dạng.
-</p>
+<p>Nếu ví mạng xã hội là một "con dao hai lưỡi", thì độ sắc bén của nó không nằm ở những tính năng ưu việt...</p>
 
-<p>
-Các kênh học tập trên YouTube, TikTok hay Instagram đang giúp nhiều học sinh tiếp cận kiến thức theo cách trực quan và sinh động hơn.
-</p>
+<h2 id="giaiphap">4. Giải pháp: Chiến thuật "3K" để làm chủ cuộc chơi</h2>
 
-<p>
-Ngoài ra, mạng xã hội còn giúp người trẻ xây dựng thương hiệu cá nhân, chia sẻ khả năng sáng tạo và mở rộng cơ hội học tập cũng như nghề nghiệp trong tương lai.
-</p>
-
-
-<h2 id="nguyco">3. Những “hố đen” trực chờ</h2>
-
-<img class="article-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
-
-<p>
-Nếu ví mạng xã hội là một con dao hai lưỡi, thì mặt còn lại của nó chính là những hệ lụy tâm lý và thói quen sử dụng không kiểm soát.
-</p>
-
-<p>
-Nhiều học sinh dễ dàng bị cuốn vào vòng xoáy thông tin vô tận, khiến việc học tập bị gián đoạn và khả năng tập trung giảm sút.
-</p>
-
-<p>
-Không chỉ vậy, những hình ảnh “cuộc sống hoàn hảo” trên mạng cũng có thể khiến người trẻ so sánh bản thân và cảm thấy áp lực.
-</p>
-
-
-<h2 id="giaiphap">4. Giải pháp: Chiến thuật 3K</h2>
-
-<p>
-Để mạng xã hội trở thành công cụ hữu ích thay vì “hố đen thời gian”, học sinh cần áp dụng chiến thuật 3K: Kiểm soát – Kỹ năng – Khởi tạo.
-</p>
-
-<p>
-Kiểm soát: quản lý thời gian sử dụng mạng xã hội mỗi ngày.
-</p>
-
-<p>
-Kỹ năng: rèn luyện tư duy phản biện để nhận biết thông tin sai lệch.
-</p>
-
-<p>
-Khởi tạo: sử dụng mạng xã hội để chia sẻ kiến thức và phát triển bản thân.
-</p>
-
-<blockquote>
-Mạng xã hội không xấu, nhưng cách chúng ta sử dụng nó sẽ quyết định tác động của nó đến cuộc sống.
-</blockquote>
+<p>Để mạng xã hội không còn là "hố đen" tiêu tốn thời gian mà trở thành bệ phóng cho tương lai...</p>
 
 </div>
-
-
 </div>
 
+<footer>
+© 2026 - Chi đoàn 11A1
+</footer>
 
-<div class="footer">
-Trang thông tin tuyên truyền – Chi đoàn 11A1
-</div>
-
+<script>
+const fireworks=document.getElementById("fireworks");
+function petal(){
+const p=document.createElement("div");
+p.className="petal";
+p.innerHTML="🌸";
+p.style.left=Math.random()*100+"vw";
+p.style.animationDuration=3+Math.random()*3+"s";
+fireworks.appendChild(p);
+setTimeout(()=>{p.remove();},5000);
+}
+setInterval(petal,200);
+</script>
 
 </body>
 </html>
