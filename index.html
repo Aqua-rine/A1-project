@@ -306,7 +306,7 @@ Thực tế cho thấy, những vụ việc tin giả về các "thử thách ng
 
 <p>Cuối cùng, đỉnh cao của việc sử dụng mạng xã hội chính là sự khởi tạo. Đã đến lúc chúng ta chuyển từ vị thế người "tiêu thụ" sang người "tạo ra" giá trị. Mạng xã hội thực chất là một bản CV trực tuyến khổng lồ, nơi mỗi bài đăng, mỗi chia sẻ đều góp phần định hình thương hiệu cá nhân trong mắt nhà tuyển dụng tương lai. Thay vì chỉ lướt xem drama, nhiều bạn trẻ đã tận dụng các trào lưu như #Studygram trên Instagram hay TikTok để chia sẻ phương pháp học tập, thiết kế và kết nối cộng đồng. Hãy biến trang cá nhân thành nơi lưu giữ những dự án sáng tạo, những góc nhìn tích cực về cuộc sống. Khi bạn biết cách biến mạng xã hội thành công cụ phục vụ ước mơ, đó cũng là lúc bạn thực sự làm chủ được "thế giới thứ hai" này.</p>
 
-<p><strong>Thông điệp cuối</strong></p>
+<p><strong>Thông điệp</strong></p>
 
 <blockquote>Mạng xã hội không xấu, nhưng cách chúng ta sử dụng nó có thể quyết định tác động của nó đến cuộc sống. Hãy là người làm chủ công nghệ, biết chọn lọc thông tin, kiểm soát thời gian và sử dụng mạng xã hội một cách thông minh. Khi đó, mạng xã hội sẽ trở thành công cụ hỗ trợ học tập và kết nối, thay vì là “hố đen” cuốn đi thời gian và năng lượng của chúng ta.</blockquote>
 
@@ -319,6 +319,7 @@ Thực tế cho thấy, những vụ việc tin giả về các "thử thách ng
 
 <script>
 const fireworks=document.getElementById("fireworks");
+
 function petal(){
 const p=document.createElement("div");
 p.className="petal";
@@ -326,12 +327,23 @@ p.innerHTML="🌸";
 p.style.left=Math.random()*100+"vw";
 p.style.animationDuration=3+Math.random()*3+"s";
 fireworks.appendChild(p);
-setTimeout(()=>{p.remove();},5000);
+
+setTimeout(()=>{
+p.remove();
+},5000);
 }
-setInterval(petal,200);
+
+// tạo hoa
+const rain=setInterval(petal,200);
+
+// dừng sau 3 giây
+setTimeout(()=>{
+clearInterval(rain);
+},3000);
 </script>
 
 </body>
 </html>
+
 
 
