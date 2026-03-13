@@ -2,27 +2,51 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
+
 <title>Liên kết hữu ích</title>
+
+<!-- logo trên tab -->
+<link rel="icon" type="image/png"
+href="https://i.pinimg.com/736x/8d/fe/2b/8dfe2b977112fab825be49e4ff15f100.jpg">
 
 <style>
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 background:#f4f4f4;
 }
 
+/* HEADER */
+
 .header{
-background:url("https://i.pinimg.com/736x/62/e6/66/62e666ea723b42c577adf59569ae90ae.jpg") center/cover no-repeat;
-height:200px;
+background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+url("https://i.pinimg.com/736x/62/e6/66/62e666ea723b42c577adf59569ae90ae.jpg");
+background-position:center;
+background-size:cover;
+height:220px;
+
 display:flex;
 align-items:center;
 justify-content:center;
+gap:20px;
+
 color:white;
-font-size:32px;
+font-size:34px;
 font-weight:bold;
+
 text-shadow:2px 2px 6px black;
 }
+
+.logo{
+width:80px;
+height:80px;
+border-radius:50%;
+border:3px solid white;
+object-fit:cover;
+}
+
+/* NAVBAR */
 
 .navbar{
 background:#c40000;
@@ -35,7 +59,7 @@ z-index:1000;
 
 .navbar a{
 color:white;
-padding:14px 20px;
+padding:14px 22px;
 text-decoration:none;
 font-weight:bold;
 }
@@ -43,6 +67,8 @@ font-weight:bold;
 .navbar a:hover{
 background:#a00000;
 }
+
+/* CONTENT */
 
 .container{
 max-width:1000px;
@@ -65,13 +91,29 @@ margin-top:40px;
 
 <body>
 
+<!-- HEADER -->
+
+<div class="header">
+
+<img class="logo"
+src="https://i.pinimg.com/736x/8d/fe/2b/8dfe2b977112fab825be49e4ff15f100.jpg">
+
+LIÊN KẾT HỮU ÍCH
+
+</div>
+
+<!-- NAVBAR -->
 
 <div class="navbar">
+
 <a href="index.html">Trang chủ</a>
 <a href="gioithieu.html">Giới thiệu</a>
 <a href="lienket.html">Liên kết hữu ích</a>
 <a href="lienhe.html">Liên hệ</a>
+
 </div>
+
+<!-- CONTENT -->
 
 <div class="container">
 
@@ -90,6 +132,12 @@ Bên dưới là một số liên kết để bạn có thể tham khảo:
 <p>
 Website chính thức của nhà trường:<br>
 <a href="http://yendinh2.edu.vn/" target="_blank">http://yendinh2.edu.vn/</a>
+</p>
+
+<p>
+Website cơ quan giáo dục:<br>
+<a href="https://moet.gov.vn/" target="_blank">https://moet.gov.vn/</a><br>
+<a href="https://thanhhoa.edu.vn/" target="_blank">https://thanhhoa.edu.vn/</a>
 </p>
 
 <p>
